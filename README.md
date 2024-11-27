@@ -32,9 +32,3 @@ Focus on improving my skills with, ansible shell and python.
 - [ ] create a gui for the config.
 - [ ] 
 
-## **How to Use This Document**
-1. Review each category and identify which goals resonate with you.
-2. Check off tasks as you complete them to track progress.
-3. Adjust goals as needed to align with your evolving priorities.
-
-**Remember:** Progress is progress, no matter how small. Stay committed and celebrate your achievements!

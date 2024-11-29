@@ -1,0 +1,15 @@
+---
+- name: Example task to save data
+  hosts: localhost
+  gather_facts: yes
+  tasks:
+    - name: get cpuinfo
+      register: cpuinfo
+      command: cat /proc/cpuinfo
+    - name: output cpuusage
+      debug:
+        var: cpuinfo.stdout_lines
+    - name: Save variable to JSON file
+      copy:
+        content: "{{ ansible_facts }}"
+        dest: ./output.json

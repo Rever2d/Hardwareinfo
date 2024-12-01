@@ -1,0 +1,8 @@
+
+var1: MacOSX
+var2: arm64
+processor: Apple M1 Pro
+processor_cores: "8"
+processor_vcpus: "8"
+memtotal_mb: "16384"
+memfree_mb: "12821"

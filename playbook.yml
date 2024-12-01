@@ -2,14 +2,20 @@
 - name: Example task to save data
   hosts: localhost
   gather_facts: yes
-  tasks:
-    - name: get cpuinfo
-      register: cpuinfo
-      command: cat /proc/cpuinfo
-    - name: output cpuusage
-      debug:
-        var: cpuinfo.stdout_lines
-    - name: Save variable to JSON file
+  vars:
+    distro_name: "{{ ansible_distribution }}"
+    arch_name: "{{ ansible_architecture}}"
+    processor: "{{ansible_processor}}"
+    processor_cores: "{{ansible_processor_cores}}"
+    processor_vcpus: "{{ansible_processor_vcpus}}"
+    memtotal_mb: "{{ansible_memtotal_mb}}"
+    memfree_mb: "{{ansible_memfree_mb}}"
+  tasks:   
+    - name: Save variables to JSON file
+      template:
+        src: template.j2
+        dest: ./output.txt
+    - name: i forgotname lol
       copy:
         content: "{{ ansible_facts }}"
         dest: ./output.json

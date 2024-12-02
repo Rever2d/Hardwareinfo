@@ -10,6 +10,7 @@
     processor_vcpus: "{{ansible_processor_vcpus}}"
     memtotal_mb: "{{ansible_memtotal_mb}}"
     memfree_mb: "{{ansible_memfree_mb}}"
+    uptime_seconds: "{{ansible_uptime_seconds}}"
   tasks:   
     - name: Save variables to JSON file
       template:

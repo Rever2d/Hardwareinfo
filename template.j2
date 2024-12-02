@@ -1,8 +1,8 @@
 
-var1: {{ distro_name }}
-var2: {{ arch_name }}
-processor: {{ processor }}
-processor_cores: "{{ansible_processor_cores}}"
-processor_vcpus: "{{ansible_processor_vcpus}}"
-memtotal_mb: "{{ansible_memtotal_mb}}"
-memfree_mb: "{{ansible_memfree_mb}}"
+{{ distro_name }}
+{{ arch_name }}
+{{ processor }}
+{{ansible_processor_cores}}
+{{ansible_processor_vcpus}}
+{{ansible_memtotal_mb}}
+{{ansible_memfree_mb}}

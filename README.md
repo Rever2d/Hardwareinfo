@@ -1,34 +1,19 @@
 Hardware info.
 ---
 
-## *1. Personal Development Goals**
-Focus on improving my skills with, ansible shell and python.
+## Installation**
+clone the repoistory and run main file in your version of python requires ansible package installed
 
+pip install ansible
 
----
-
-## 1. mk1:
-- [ ] Print hardware info to the console when prompted.
-
----
-
-### 2. mk2:
-- [ ] allow the user to create a config file to only display the info they require.
-- [ ] give an option to manually select each time through cli e.g. -c =cpu usage shown
+## Setup**
+to setup select a ini file as well as add any ansible playbooks to the folder add_playbooks_here directory if no ini file selected the code will run locally select the playbook and press run command
 
 ---
 
-### 3. mk3:
-- [ ] live update info via mulithreading python e.g. cpu usage.
+## add playbooks
+to add playbooks add playbooks to folder add_playbooks_here if any requires extra vars please set varible to  = '' and it will be automatically detect it
+
 
 ---
-
-### 4. gui:
-- [ ] create a simple to understand user interface for info.
-
----
-
-### 5. bonus:
-- [ ] create a gui for the config.
-- [ ] 
 

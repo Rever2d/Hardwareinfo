@@ -1,0 +1,17 @@
+---
+- name: Install a package specified by an external variable
+  hosts: all
+  become: yes  # Ensures the task is run with elevated privileges (e.g., sudo)
+  vars:
+    package_name: ""  # Default value (optional, will be overridden by --extra-vars)
+
+  tasks:
+    - name: Ensure a package is installed
+      package:
+        name: "{{ package_name }}"
+        state: present
+      when: package_name != ""
+    - name: Fail if no package is provided
+      fail:
+        msg: "The variable 'package_name' is required. Pass it using --extra-vars."
+      when: package_name == ""

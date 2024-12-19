@@ -1,0 +1,25 @@
+---
+- name: Example task to save data
+  hosts: localhost
+  gather_facts: yes
+  vars:
+    distro_name: "{{ ansible_distribution }}"
+    arch_name: "{{ ansible_architecture }}"
+    processor: "{{ ansible_processor }}"
+    processor_cores: "{{ ansible_processor_cores }}"
+    processor_vcpus: "{{ ansible_processor_vcpus }}"
+    memtotal_mb: "{{ ansible_memtotal_mb }}"
+    memfree_mb: "{{ ansible_memfree_mb }}"
+    uptime_seconds: "{{ ansible_uptime_seconds }}"
+  tasks:
+    - name: output to console
+      debug:
+        msg:
+          - "os: {{ distro_name }}"
+          - "arch{{ arch_name }}"
+          - "cpu{{ processor }}"
+          - "cores{{ processor_cores }}"
+          - "vcores{{ processor_vcpus }}"
+          - "memtotal{{ memtotal_mb }}"
+          - "memfree{{ memfree_mb }}"
+          - "uptime{{ uptime_seconds }}"

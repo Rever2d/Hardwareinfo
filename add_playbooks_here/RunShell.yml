@@ -1,0 +1,22 @@
+---
+- name: Run a shell command on remote hostsans
+
+  become: yes  # Ensures elevated privileges if needed
+  vars:
+    command_to_run: ""  # Default value, overridden by --extra-vars
+
+  tasks:
+    - name: Execute the shell command
+      shell: "{{ command_to_run }}"
+      register: command_output
+      when: command_to_run != ""
+
+    - name: Output the command result
+      debug:
+        msg: "{{ command_output.stdout }}"
+      when: command_to_run != ""
+
+    - name: Fail if no command is provided
+      fail:
+        msg: "The variable 'command_to_run' is required. Pass it using --extra-vars."
+      when: command_to_run == ""
